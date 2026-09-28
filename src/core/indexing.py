@@ -25,7 +25,7 @@ def gerar_saida_p2(matriz_tfidf, caminho_saida):
     linhas = matriz_tfidf.shape[0]
     colunas = matriz_tfidf.shape[1]
     
-    # Frase exigida pela rubrica explicando a nossa decisão
+    # Frase explicando a decisão
     frase_decisao = (
         "Optei remover acentos (strip_accents='unicode') "
         "e excluir uma lista customizada de stopwords em português (incluindo termos como "

@@ -57,3 +57,32 @@
 
 ---
 
+## P3
+### Recuperação top-k com regra de vigência
+
+**P01 - Pergunta:** Com quantos dias de antecedência devo solicitar minhas férias?
+
+| Posição | doc_id | seção | score |
+|---|---|---|---|
+| 1 | POL-002 | Como solicitar | 0.41 |
+| 2 | POL-002 | Venda de dias | 0.34 |
+| 3 | POL-002 | Direito a férias | 0.23 |
+
+**P02 - Pergunta:** Quantos dias por semana posso trabalhar de forma remota?
+
+| Posição | doc_id | seção | score |
+|---|---|---|---|
+| 1 | POL-005 | Regra de trabalho remoto | 0.53 |
+| 2 | FAQ-001 | Posso trabalhar remoto todos os dias? | 0.15 |
+| 3 | FAQ-001 | Quem é o meu buddy? | 0.10 |
+
+**P10 - Pergunta:** Qual é a política de estacionamento da empresa?
+
+| Posição | doc_id | seção | score |
+|---|---|---|---|
+| 1 | POL-001 | Objetivo | 0.21 |
+| 2 | POL-008 | Aviso | 0.20 |
+| 3 | POL-003 | Auxílio para trabalho remoto | 0.20 |
+
+---
+
