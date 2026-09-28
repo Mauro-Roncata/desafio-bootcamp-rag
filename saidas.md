@@ -86,3 +86,29 @@
 
 ---
 
+## P4
+### Resposta extrativa e regra de não encontrado
+
+**Threshold escolhido:** 0.3
+**Justificativa:** Ao analisar os resultados da P3, observei que perguntas válidas retornaram scores acima de 0.40, enquanto a pergunta P10 (sem resposta no corpus) teve o seu maior score em 0.21. Escolhi 0.30 como ponto de corte seguro para evitar falsos positivos sem prejudicar respostas corretas.
+
+**Teste com P02:**
+```text
+PERGUNTA: Quantos dias por semana posso trabalhar de forma remota?
+RESPOSTA: O colaborador pode trabalhar de forma remota em até 3 dias por semana. Os dias presenciais obrigatórios são terça-feira e quinta-feira.
+FONTE: POL-005 | Política de Trabalho Híbrido (versão 2) | Seção: Regra de trabalho remoto
+SCORE: 0.53
+STATUS: encontrado
+```
+
+**Teste com P10:**
+```text
+PERGUNTA: Qual é a política de estacionamento da empresa?
+RESPOSTA: Não encontrei essa informação nas políticas vigentes. Procure a área de Pessoas e Cultura.
+FONTE: nenhuma
+SCORE: 0.21
+STATUS: nao_encontrado
+```
+
+---
+

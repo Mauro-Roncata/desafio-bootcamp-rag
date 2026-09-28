@@ -4,6 +4,7 @@ from core.data_loader import carregar_corpus, validar_status, gerar_saida_p0
 from core.chunking import criar_chunks, gerar_saida_p1
 from core.indexing import criar_indice_tfidf, gerar_saida_p2
 from core.search import buscar, gerar_saida_p3
+from core.responder import responder, gerar_saida_p4
 
 def main():
     # Configura os caminhos das pastas
@@ -37,6 +38,9 @@ def main():
     df_perguntas = pd.read_csv(caminho_csv_perguntas, encoding='utf-8')
     # Executa as buscas de teste e gera a evidência
     gerar_saida_p3(df_perguntas, df_chunks, vetorizador, matriz_tfidf, caminho_saidas)
+
+    print("\nIniciando a Parte 4: Resposta extrativa e regra de não encontrado...")
+    gerar_saida_p4(df_perguntas, df_chunks, vetorizador, matriz_tfidf, caminho_saidas)
 
 
 
