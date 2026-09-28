@@ -1,6 +1,7 @@
 import os
 from core.data_loader import carregar_corpus, validar_status, gerar_saida_p0
 from core.chunking import criar_chunks, gerar_saida_p1
+from core.indexing import criar_indice_tfidf, gerar_saida_p2
 
 def main():
     # Configura os caminhos das pastas
@@ -22,6 +23,11 @@ def main():
     print("\nIniciando a Parte 1: Chunking por seção...")
     df_chunks = criar_chunks(df)
     gerar_saida_p1(df_chunks, caminho_saidas)
+
+    print("\nIniciando a Parte 2: Indexação com TF-IDF...")
+    # Passando os chunks gerados na P1 para o indexador
+    vetorizador, matriz_tfidf = criar_indice_tfidf(df_chunks)
+    gerar_saida_p2(matriz_tfidf, caminho_saidas)
 
 
 

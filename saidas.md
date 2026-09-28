@@ -48,3 +48,12 @@
 
 ---
 
+## P2
+### Indexação com TF-IDF
+
+**Forma da matriz:** 46 linhas por 328 colunas.
+
+**Decisão de pré-processamento:** Optei remover acentos (strip_accents='unicode') e excluir uma lista customizada de stopwords em português (incluindo termos como 'qual', 'posso', 'quantos') para reduzir o ruído e focar nas palavras com maior peso, evitando falsos positivos na recuperação.
+
+---
+
