@@ -1,3 +1,8 @@
+# Desafio Bootcamp SEP26 - Assistente de Políticas Internas
+**Autor:** Mauro Pezzetta Roncata
+**Repositório GitHub (com histórico de commits):** https://github.com/Mauro-Roncata/desafio-bootcamp-rag.git
+---
+
 ## Reflexão - Assistente de Políticas Internas
 
 **1. A importância de citar a FONTE e os riscos reais:**
