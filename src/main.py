@@ -5,6 +5,7 @@ from core.chunking import criar_chunks, gerar_saida_p1
 from core.indexing import criar_indice_tfidf, gerar_saida_p2
 from core.search import buscar, gerar_saida_p3
 from core.responder import responder, gerar_saida_p4
+from core.evaluation import avaliar_assistente
 
 def main():
     # Configura os caminhos das pastas
@@ -17,6 +18,10 @@ def main():
     pasta_corpus = os.path.join(pasta_raiz, "corpus")
     caminho_saidas = os.path.join(pasta_raiz, "saidas.md")
     caminho_csv_perguntas = os.path.join(pasta_raiz, "perguntas_gabarito.csv")
+
+    # Garante que o relatório sempre seja gerado do zero
+    if os.path.exists(caminho_saidas):
+        os.remove(caminho_saidas)
     
     print("Iniciando a Parte 0: Setup e leitura do corpus...\n")
     # Executando as funções
@@ -41,6 +46,11 @@ def main():
 
     print("\nIniciando a Parte 4: Resposta extrativa e regra de não encontrado...")
     gerar_saida_p4(df_perguntas, df_chunks, vetorizador, matriz_tfidf, caminho_saidas)
+
+    print("\nIniciando a Parte 5: Avaliação com o gabarito...")
+    avaliar_assistente(df_perguntas, df_chunks, vetorizador, matriz_tfidf, caminho_saidas)
+    
+    print("\n🎉 Processamento concluído com sucesso! Verifique o arquivo saidas.md")
 
 
 

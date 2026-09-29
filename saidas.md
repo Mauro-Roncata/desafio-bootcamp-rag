@@ -112,3 +112,30 @@ STATUS: nao_encontrado
 
 ---
 
+## P5
+### Avaliação com o gabarito
+
+| pergunta_id | doc_esperado | doc_retornado_1 | score | STATUS | acerto |
+|---|---|---|---|---|---|
+| P01 | POL-002 | POL-002 | 0.41 | encontrado | Sim |
+| P02 | POL-005 | POL-005 | 0.53 | encontrado | Sim |
+| P03 | POL-003 | POL-003 | 0.54 | encontrado | Sim |
+| P04 | POL-006 | POL-006 | 0.38 | encontrado | Sim |
+| P05 | POL-009 | POL-009 | 0.38 | encontrado | Sim |
+| P06 | POL-007 | POL-007 | 0.54 | encontrado | Sim |
+| P07 | POL-008 | POL-008 | 0.38 | encontrado | Sim |
+| P08 | POL-009 | POL-009 | 0.49 | encontrado | Sim |
+| P09 | POL-010 | POL-010 | 0.36 | encontrado | Sim |
+| P10 | nao_encontrado | POL-001 | 0.21 | nao_encontrado | Sim (Correto ao barrar) |
+
+**Métricas (calculadas sobre as 9 perguntas válidas):**
+- **Hit@1:** 1.00 (9/9)
+- **Hit@3:** 1.00 (9/9)
+
+**Verificação P10:** O STATUS devolvido foi nao_encontrado? **ACERTOU**
+
+**Análise de erro ou proximidade:**
+Alguns scores ficam perigosamente perto do threshold porque o algoritmo TF-IDF exige correspondência exata de palavras. Se o usuário utilizar sinônimos que não constam nas políticas, o score despenca. Para corrigir esse comportamento e melhorar o Hit@1, eu aplicaria a técnica de Lemmatization no pré-processamento ou substituiria o modelo TF-IDF por Embeddings densos, que conseguem compreender a similaridade semântica entre palavras diferentes.
+
+---
+
